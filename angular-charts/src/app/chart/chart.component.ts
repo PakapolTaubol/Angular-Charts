@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+interface ExpenseItem {
+
+  name: string;
+
+  percentage: string;
+
+  amount: string;
+
+}
 
 @Component({
   selector: 'app-chart',
@@ -8,6 +17,16 @@ import { Component, OnInit } from '@angular/core';
 export class ChartComponent implements OnInit {
   data: any;
   constructor() { }
+
+  expenseItems: ExpenseItem[] = [
+    { name: 'QR รับเงิน', percentage: '26.26%', amount: '180,000.00' },
+    { name: 'พอยท์เพย์', percentage: '21.97%', amount: '150,600.50' },
+    { name: 'สิทธิสวัสดิการฯ', percentage: '17.64%', amount: '120,900.50' },
+    { name: 'ก๊าซหุงต้ม', percentage: '14.59%', amount: '100,000.00' },
+    { name: 'E-Money', percentage: '12.25%', amount: '84,000.00' },
+    { name: 'สิทธิภาคขนส่ง', percentage: '7.00%', amount: '50,000.00' },
+
+  ];
 
   ngOnInit(): void {
     this.data = {

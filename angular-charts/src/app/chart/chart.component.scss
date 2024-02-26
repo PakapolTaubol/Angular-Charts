@@ -1,0 +1,33 @@
+.expense-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .exp-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: left;
+        padding: 6px;
+        border: 1px solid;
+        border-color: gray;
+
+        .name-and-percentage {
+            display: flex;
+            align-items: center;
+
+            .name {
+                flex: 1;
+            }
+
+            .percentage {
+                color: gray;
+                margin-left: 5px;
+            }
+        }
+
+        .amount {
+            font-weight: bold;
+        }
+    }
+}

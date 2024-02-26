@@ -1,5 +1,52 @@
-<p>chart works!</p>
+<div id="รายการขาย">
+    <p class="text-2xl font-bold text-blue-400">รายการขาย</p>
+    <p>ข้อมูลสรุปรายการรับเงินร้านค้าประจำเดือน</p>
+    <p class="text-2xl font-bold text-blue-400">ดาวน์โหลดรายงานการขาย</p>
+    <div>
+        <div>
+            <span class="font-bold text-blue-400">สาขา</span>
+            <span>สาขาทั้งหมด</span>
+        </div>
+        <div>
+            <span class="font-bold text-blue-400">เดือน</span>
+            <span>กพ 67</span>
+        </div>
+        <button>ดูข้อมูล</button>
+    </div>
+</div>
 
-<div class="flex justify-content-center">
-    <p-chart type="doughnut" [data]="data" height="400px" width="400px"></p-chart>
+<div id="ผลการดูข้อมูล">
+    <p>ผลการดูข้อมูล: สาขา สาขาทั้งหมด เดือน ก.พ.67</p>
+    <div>
+        <div>
+            <span>ยอดรวมทั้งหมด</span>
+            <p>685,501.00 บาท</p>
+        </div>
+        <div>
+            <span>รายการรับเงินรวม</span>
+            <p>3,194 รายการ</p>
+        </div>
+        <div>
+            <span>รายการคืนเงินรวม</span>
+            <p>28 รายการ</p>
+        </div>
+    </div>
+</div>
+
+<div id="สัดส่วนการขาย">
+    <p class="text-2xl font-bold">สัดส่วนการขาย</p>
+    <div id="doughnut-percent" class="flex">
+        <div>
+            <p-chart type="doughnut" [data]="data" height="400px" width="400px"></p-chart>
+        </div>
+        <div class="expense-breakdown">
+            <div class="exp-item" *ngFor="let item of expenseItems">
+                <div class="name-and-percentage">
+                    <div class="name">{{ item.name }}</div>
+                    <div class="percentage">({{ item.percentage }})</div>
+                </div>
+                <div><span class="amount">{{ item.amount }}</span> บาท</div>
+            </div>
+        </div>
+    </div>
 </div>
