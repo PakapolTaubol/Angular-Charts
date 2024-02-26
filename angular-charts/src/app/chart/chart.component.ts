@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-interface ExpenseItem {
-
+interface SaleProportion {
   name: string;
-
-  percentage: string;
-
+  percentage: number;
   amount: string;
-
+  backgroundColor: string;
 }
 
 @Component({
@@ -18,30 +15,22 @@ export class ChartComponent implements OnInit {
   data: any;
   constructor() { }
 
-  expenseItems: ExpenseItem[] = [
-    { name: 'QR รับเงิน', percentage: '26.26%', amount: '180,000.00' },
-    { name: 'พอยท์เพย์', percentage: '21.97%', amount: '150,600.50' },
-    { name: 'สิทธิสวัสดิการฯ', percentage: '17.64%', amount: '120,900.50' },
-    { name: 'ก๊าซหุงต้ม', percentage: '14.59%', amount: '100,000.00' },
-    { name: 'E-Money', percentage: '12.25%', amount: '84,000.00' },
-    { name: 'สิทธิภาคขนส่ง', percentage: '7.00%', amount: '50,000.00' },
-
+  saleProportion: SaleProportion[] = [
+    { name: 'QR รับเงิน', percentage: 26.26, amount: '180,000.00', backgroundColor: '#012B5F' },
+    { name: 'พอยท์เพย์', percentage: 21.97, amount: '150,600.50', backgroundColor: '#BB9759' },
+    { name: 'สิทธิสวัสดิการฯ', percentage: 17.64, amount: '120,900.50', backgroundColor: '#4EAEDC' },
+    { name: 'ก๊าซหุงต้ม', percentage: 4.59, amount: '100,000.00', backgroundColor: '#26A69A' },
+    { name: 'E-Money', percentage: 12.25, amount: '84,000.00', backgroundColor: '#F2CB3B' },
+    { name: 'สิทธิภาคขนส่ง', percentage: 7.00, amount: '50,000.00', backgroundColor: '#6A3A3A' },
   ];
 
   ngOnInit(): void {
     this.data = {
-      labels: ['QR รับเงิน', 'พอยท์เพย์', 'สิทธิสวัสดิการฯ', 'ก๊าซหุงต้ม', 'E-Money', 'สิทธิภาคขนส่ง'],
+      labels: this.saleProportion.map(item => item.name),
       datasets: [
         {
-          data: [26.26, 21.97, 17.64, 14.59, 12.25, 7],
-          backgroundColor: [
-            '#012B5F',
-            '#BB9759',
-            '#4EAEdC',
-            '#26a69a',
-            '#F2CB3B',
-            '#6A3A3A'
-          ]
+          data: this.saleProportion.map(item => item.percentage),
+          backgroundColor: this.saleProportion.map(item => item.backgroundColor)
         }
       ]
     };

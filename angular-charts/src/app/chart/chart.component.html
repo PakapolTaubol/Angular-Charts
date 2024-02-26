@@ -39,13 +39,16 @@
         <div>
             <p-chart type="doughnut" [data]="data" height="400px" width="400px"></p-chart>
         </div>
-        <div class="expense-breakdown">
-            <div class="exp-item" *ngFor="let item of expenseItems">
-                <div class="name-and-percentage">
-                    <div class="name">{{ item.name }}</div>
-                    <div class="percentage">({{ item.percentage }})</div>
+        <div class="saleProportion-breakdown">
+            <div class="sp-item" *ngFor="let item of saleProportion">
+                <div class="sp-color" [style.background-color]="item.backgroundColor"></div>
+                <div class="flex flex-column justify-content-center pl-4">
+                    <div class="name-and-percentage">
+                        <div class="name">{{ item.name }}</div>
+                        <div class="percentage">({{ item.percentage }}%)</div>
+                    </div>
+                    <div><span class="amount">{{ item.amount }}</span> บาท</div>
                 </div>
-                <div><span class="amount">{{ item.amount }}</span> บาท</div>
             </div>
         </div>
     </div>

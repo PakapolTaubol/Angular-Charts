@@ -1,16 +1,22 @@
-.expense-breakdown {
+.saleProportion-breakdown {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 
-    .exp-item {
+    .sp-item {
+        height: 70px;
+        width: 250px;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: left;
-        padding: 6px;
         border: 1px solid;
-        border-color: gray;
+        border-color: rgb(210, 210, 210);
+        border-radius: 8px;
+
+        .sp-color {
+            height: 100%;
+            width: 8px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
 
         .name-and-percentage {
             display: flex;
