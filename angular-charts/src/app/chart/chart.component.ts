@@ -32,6 +32,9 @@ export class ChartComponent implements OnInit {
           data: this.saleProportion.map(item => item.percentage),
           backgroundColor: this.saleProportion.map(item => item.backgroundColor),
           borderWidth: 0,
+          // animation: false,
+          cutout: 75,
+          hoverOffset: 15,
         }
       ]
     };
