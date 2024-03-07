@@ -36,17 +36,16 @@ export class ChartComponent implements OnInit {
           backgroundColor: this.saleProportion.map(item => item.backgroundColor),
           borderWidth: 0,
           animation: false,
-          cutout: 70,
+          cutout: 90,
           // hoverOffset: 10,
           datalabels: {
-
             anchor: 'end',
             align: 'end',
             color: '#597284',
             font: {
               size: 16
             },
-            offset: 0,
+            offset: 5,
             formatter: ((value: number) => {
               // if Integer return x% format,If not Integer will return x.xx% format
               const isInteger = Math.floor(value) === value;
@@ -62,7 +61,7 @@ export class ChartComponent implements OnInit {
     };
 
     this.options = {
-      plugins:{
+      plugins: {
         tooltip: {
           enabled: false
         }
