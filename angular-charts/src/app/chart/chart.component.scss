@@ -1,23 +1,23 @@
 .saleProportion-breakdown {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: full;
-    height: full;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 688px;
+    height: 288px;
 
     .sp-item {
-        height: 70px;
-        width: 250px;
+        width: 322px;
+        height: 80px;
         display: flex;
         border: 1px solid;
         border-color: rgb(210, 210, 210);
-        border-radius: 8px;
+        border-radius: 6px;
 
         .sp-color {
             height: 100%;
             width: 8px;
-            border-top-left-radius: 8px;
-            border-bottom-left-radius: 8px;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
         }
 
         .name-and-percentage {
@@ -40,8 +40,14 @@
     }
 }
 
+.saleProportion-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #doughnut-percent {
-    width: full;
+    width: 100%;
     height: 420px;
 
     .doughnut {

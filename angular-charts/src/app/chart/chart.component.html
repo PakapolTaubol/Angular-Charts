@@ -37,17 +37,20 @@
     <p class="text-2xl font-bold">สัดส่วนการขาย</p>
     <div id="doughnut-percent" class="flex">
         <div class="doughnut">
-            <p-chart type="doughnut" [data]="data" [options]="options"  [plugins]="plugin" height="320px" width="320px" ></p-chart>
+            <p-chart type="doughnut" [data]="data" [options]="options" [plugins]="plugin" height="380px"
+                width="380px"></p-chart>
         </div>
-        <div class="saleProportion-breakdown">
-            <div class="sp-item" *ngFor="let item of saleProportion">
-                <div class="sp-color" [style.background-color]="item.backgroundColor"></div>
-                <div class="flex flex-column justify-content-center pl-4">
-                    <div class="name-and-percentage">
-                        <div class="name">{{ item.name }}</div>
-                        <div class="percentage">({{ item.percentage }}%)</div>
+        <div class="saleProportion-div">
+            <div class="saleProportion-breakdown">
+                <div class="sp-item" *ngFor="let item of saleProportion">
+                    <div class="sp-color" [style.background-color]="item.backgroundColor"></div>
+                    <div class="flex flex-column justify-content-center pl-4">
+                        <div class="name-and-percentage">
+                            <div class="name">{{ item.name }}</div>
+                            <div class="percentage">({{ item.percentage }}%)</div>
+                        </div>
+                        <div><span class="amount">{{ item.amount }}</span> บาท</div>
                     </div>
-                    <div><span class="amount">{{ item.amount }}</span> บาท</div>
                 </div>
             </div>
         </div>
