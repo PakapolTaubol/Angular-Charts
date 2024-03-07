@@ -1,4 +1,4 @@
-<div id="รายการขาย">
+<!-- <div id="รายการขาย">
     <p class="text-2xl font-bold text-blue-400">รายการขาย</p>
     <p>ข้อมูลสรุปรายการรับเงินร้านค้าประจำเดือน</p>
     <p class="text-2xl font-bold text-blue-400">ดาวน์โหลดรายงานการขาย</p>
@@ -31,13 +31,13 @@
             <p>28 รายการ</p>
         </div>
     </div>
-</div>
+</div> -->
 
 <div id="สัดส่วนการขาย">
     <p class="text-2xl font-bold">สัดส่วนการขาย</p>
     <div id="doughnut-percent" class="flex">
-        <div>
-            <p-chart type="doughnut" [data]="data" height="320px" width="320px" ></p-chart>
+        <div class="doughnut">
+            <p-chart type="doughnut" [data]="data" [options]="options"  [plugins]="plugin" height="320px" width="320px" ></p-chart>
         </div>
         <div class="saleProportion-breakdown">
             <div class="sp-item" *ngFor="let item of saleProportion">

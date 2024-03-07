@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 interface SaleProportion {
   name: string;
   percentage: number;
@@ -13,6 +14,8 @@ interface SaleProportion {
 })
 export class ChartComponent implements OnInit {
   data: any;
+  plugin: any;
+  options: any;
   constructor() { }
 
   saleProportion: SaleProportion[] = [
@@ -26,17 +29,40 @@ export class ChartComponent implements OnInit {
 
   ngOnInit(): void {
     this.data = {
-      labels: this.saleProportion.map(item => item.name),
+      // labels: this.saleProportion.map(item => item.name),
       datasets: [
         {
           data: this.saleProportion.map(item => item.percentage),
           backgroundColor: this.saleProportion.map(item => item.backgroundColor),
           borderWidth: 0,
-          // animation: false,
-          cutout: 75,
-          hoverOffset: 15,
+          animation: false,
+          cutout: 90,
+          // hoverOffset: 10,
+          datalabels: {
+
+            anchor: 'end',
+            align: 'end',
+            color: '#597284',
+            font: {
+              size: 16
+            },
+            offset: 0,
+            formatter: ((value: number) => {
+              return `${value.toFixed(2)}%`
+            })
+          }
         }
-      ]
+      ],
     };
+
+    this.options = {
+      plugins:{
+        tooltip: {
+          enabled: false
+        }
+      }
+    }
+
+    this.plugin = [ChartDataLabels]
   }
 }
